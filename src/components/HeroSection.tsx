@@ -1,7 +1,10 @@
 import { Button } from '@/components/ui/button';
 import { Scan, Shield, Ticket } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+  
   return (
     <section id="accueil" className="relative min-h-screen flex items-center justify-center overflow-hidden gradient-hero pattern-zellige">
       {/* Animated Background Elements */}
@@ -38,7 +41,7 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-            <Button variant="hero" size="xl">
+            <Button variant="hero" size="xl" onClick={() => navigate('/facebuy')}>
               <Scan className="w-5 h-5" />
               Acheter avec FaceBuy
             </Button>
